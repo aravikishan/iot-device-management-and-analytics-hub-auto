@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Device Management - Devices</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>IoT Device Management</h1>
+    </header>
+    <nav>
+        <a href="/">Dashboard</a>
+        <a href="/devices" class="active">Devices</a>
+        <a href="/analytics">Analytics</a>
+        <a href="/profile">Profile</a>
+    </nav>
+    <main class="container mt-5">
+        <h1 class="mb-4">Device Management</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for device in devices %}
+                <tr>
+                    <td>{{ device.id }}</td>
+                    <td>{{ device.type }}</td>
+                    <td>{{ device.status }}</td>
+                    <td>{{ device.last_updated }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2023 IoT Device Management</p>
+    </footer>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
